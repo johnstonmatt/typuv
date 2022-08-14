@@ -1,10 +1,11 @@
-[![Coverage Status](https://coveralls.io/repos/github/johnstonmatt/current-type-of/badge.svg?branch=master)](https://coveralls.io/github/johnstonmatt/current-type-of?branch=master)
-[![Build Status](https://travis-ci.org/johnstonmatt/current-type-of.svg?branch=master)](https://travis-ci.org/johnstonmatt/current-type-of)
-[![npm](https://img.shields.io/npm/v/current-type-of.svg)](https://npmjs.com/package/current-type-of)
+![NPM](https://img.shields.io/npm/l/typuv)
+![NPM](https://img.shields.io/npm/v/typuv)
+![GitHub Workflow Status](https://github.com/johnstonmatt/typuv/actions/workflows/typuv.yml/badge.svg?branch=main)
 
 ### typuv
+
 ```js
-import typuv from 'typuv'
+import typuv from "typuv";
 
 const typeOfNull = typuv(null);
 console.log(typeOfNull); // 'null'
@@ -15,11 +16,11 @@ console.log(typeOfArray); // 'array'
 // instead of
 
 const unpredictableTypeOfNull = typeof null;
-console.log(unpredictableTypeOfNull) // 'object'
-
+console.log(unpredictableTypeOfNull); // 'object'
 
 const unpredictableTypeOfArray = typeof [];
-console.log(unpredictableTypeOfArray) // 'object'
+console.log(unpredictableTypeOfArray); // 'object'
 ```
 
-This package is silly and you shouldn't use it, but if you do: it is reliable and has no dependencies.
+This package is silly and you shouldn't use it, but if you do: it is reliable
+and has no dependencies.
