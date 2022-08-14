@@ -1,7 +1,5 @@
-export function foo(a: number, b: number): number {
-  return a + b;
-}
-
-export function bar(a: number, b: number): number {
-  return a - b;
+export default function typuv(value:unknown):string {
+  if(value === null) return 'null';
+  if(Array.isArray(value)) return 'array';
+  return typeof value;
 }

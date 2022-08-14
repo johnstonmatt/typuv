@@ -1,79 +1,25 @@
-# Typescript Library Starter
+[![Coverage Status](https://coveralls.io/repos/github/johnstonmatt/current-type-of/badge.svg?branch=master)](https://coveralls.io/github/johnstonmatt/current-type-of?branch=master)
+[![Build Status](https://travis-ci.org/johnstonmatt/current-type-of.svg?branch=master)](https://travis-ci.org/johnstonmatt/current-type-of)
+[![npm](https://img.shields.io/npm/v/current-type-of.svg)](https://npmjs.com/package/current-type-of)
 
-![NPM](https://img.shields.io/npm/l/@gjuchault/typescript-library-starter)
-![NPM](https://img.shields.io/npm/v/@gjuchault/typescript-library-starter)
-![GitHub Workflow Status](https://github.com/gjuchault/typescript-library-starter/actions/workflows/typescript-library-starter.yml/badge.svg?branch=main)
+### typuv
+```js
+import typuv from 'typuv'
 
-Yet another (opinionated) typescript library starter template.
+const typeOfNull = typuv(null);
+console.log(typeOfNull); // 'null'
 
-## Opinions and limitations
+const typeOfArray = typuv([]);
+console.log(typeOfArray); // 'array'
 
-1. Relies as much as possible on each included library's defaults
-2. Only rely on GitHub Actions
-3. Do not include documentation generation
+// instead of
 
-## Getting started
+const unpredictableTypeOfNull = typeof null;
+console.log(unpredictableTypeOfNull) // 'object'
 
-1. `npx degit gjuchault/typescript-library-starter my-project` or click on `Use this template` button on GitHub!
-2. `cd my-project`
-3. `npm install`
-4. `git init` (if you used degit)
-5. `npm run setup`
 
-To enable deployment, you will need to:
+const unpredictableTypeOfArray = typeof [];
+console.log(unpredictableTypeOfArray) // 'object'
+```
 
-1. Setup `NPM_TOKEN` secret in GitHub actions ([Settings > Secrets > Actions](https://github.com/gjuchault/typescript-service-starter/settings/secrets/actions))
-2. Give `GITHUB_TOKEN` write permissions for GitHub releases ([Settings > Actions > General](https://github.com/gjuchault/typescript-service-starter/settings/actions) > Workflow permissions)
-
-## Features
-
-### Node.js, npm version
-
-Typescript Library Starter relies on [volta](https://volta.sh/) to ensure node version to be consistent across developers. It's also used in the GitHub workflow file.
-
-### Typescript
-
-Leverages [esbuild](https://github.com/evanw/esbuild) for blazing fast builds, but keeps `tsc` to generate `.d.ts` files.
-Generates two builds to support both ESM and CJS.
-
-Commands:
-
-- `build`: runs typechecking then generates CJS, ESM and `d.ts` files in the `build/` directory
-- `clean`: removes the `build/` directory
-- `type:dts`: only generates `d.ts`
-- `type:check`: only run typechecking
-- `type:build`: only generates CJS and ESM
-
-### Tests
-
-typescript-library-starter uses [vitest](https://vitest.dev/). The coverage is done through vitest, using [c8](https://github.com/bcoe/c8).
-
-Commands:
-
-- `test`: runs vitest test runner
-- `test:watch`: runs vitest test runner in watch mode
-- `test:coverage`: runs vitest test runner and generates coverage reports
-
-### Format & lint
-
-This template relies on the combination of [eslint](https://github.com/eslint/eslint) — through [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) for linting and [prettier](https://github.com/prettier/prettier) for formatting.
-It also uses [cspell](https://github.com/streetsidesoftware/cspell) to ensure spelling
-
-Commands:
-
-- `format`: runs prettier with automatic fixing
-- `format:check`: runs prettier without automatic fixing (used in CI)
-- `lint`: runs eslint with automatic fixing
-- `lint:check`: runs eslint without automatic fixing (used in CI)
-- `spell:check`: runs spellchecking
-
-### Releasing
-
-Under the hood, this library uses [semantic-release](https://github.com/semantic-release/semantic-release) and [commitizen](https://github.com/commitizen/cz-cli).
-The goal is to avoid manual release process. Using `semantic-release` will automatically create a github release (hence tags) as well as an npm release.
-Based on your commit history, `semantic-release` will automatically create a patch, feature or breaking release.
-
-Commands:
-
-- `cz`: interactive CLI that helps you generate a proper git commit message, using [commitizen](https://github.com/commitizen/cz-cli)
-- `semantic-release`: triggers a release (used in CI)
+This package is silly and you shouldn't use it, but if you do: it is reliable and has no dependencies.
