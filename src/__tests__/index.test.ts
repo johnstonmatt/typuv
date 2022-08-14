@@ -7,6 +7,7 @@ describe("typuv", () => {
     expect(typuv(0)).toEqual("number");
     expect(typuv("I am a string")).toEqual("string");
     expect(typuv([])).toEqual("array");
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     expect(typuv(() => {})).toEqual("function");
     expect(typuv(Symbol("I can't remember what we use symbols for!"))).toEqual(
       "symbol"
